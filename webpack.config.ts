@@ -24,6 +24,7 @@ const config: webpack.ConfigurationFactory = async (env, argv) => {
         context: javascriptDir,
         entry: {
             admin: "./adminSiteClient/admin.entry.js",
+            bugsnag: "./site/bugsnag.entry.js",
             owid: "./site/owid.entry.js",
         },
         optimization: {
@@ -50,7 +51,7 @@ const config: webpack.ConfigurationFactory = async (env, argv) => {
                     js: {
                         test: (module) => !module.type?.startsWith("css"),
                         name: "commons-js", // needs to be unique
-                        chunks: "all",
+                        chunks: (chunk) => chunk.name !== "bugsnag",
                         minChunks: 2,
                         maxSize: isProduction ? 1024 * 1024 : undefined, // in bytes
                     },

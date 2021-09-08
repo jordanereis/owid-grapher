@@ -242,6 +242,7 @@ export const SiteFooter = (props: SiteFooterProps) => (
             <script src="https://polyfill.io/v3/polyfill.min.js?features=es6,fetch,URL,IntersectionObserver,IntersectionObserverEntry" />
             {flatten(
                 [
+                    "bugsnag.js",
                     "commons-css.js",
                     "commons-js.js",
                     "owid.js",

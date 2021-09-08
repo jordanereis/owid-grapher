@@ -44,6 +44,7 @@ export const IndexPage = (props: {
                 <div id="app"></div>
                 {flatten(
                     [
+                        "bugsnag.js",
                         "commons-css.js",
                         "commons-js.js",
                         "admin.js",
